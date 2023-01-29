@@ -1,0 +1,48 @@
+<navbar-component></navbar-component>
+
+<main class="my-5">
+  <div class="container">
+    <section class="text-center">
+      <h4 class="mb-5"><strong>Ultimele produse</strong></h4>
+      <div class="row">
+        <div *ngFor="let item of item$ | async" class="col-lg-4 col-md-12 mb-4">
+          <div class="card">
+            <div
+              class="bg-image hover-overlay ripple"
+              data-mdb-ripple-color="light"
+            >
+              <img
+              [src]="item.image"
+                class="img-fluid"
+              />
+              <a href="#!">
+                <div
+                  class="mask"
+                  style="background-color: rgba(251, 251, 251, 0.15)"
+                ></div>
+              </a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ item.name }}</h5>
+              <p class="card-text">
+                {{item.description}}
+              </p>
+              <h6>
+                Brand:
+                <span class="badge badge-secondary">{{ item.company }}</span>
+              </h6>
+              <!-- <a href="#!" class="btn btn-primary">Detalii</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="text-lg-start">
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    © 2023 Copyright:
+    <a class="text-dark" href="https://google.com/">ClothesShop.com</a>
+  </div>
+</footer>
